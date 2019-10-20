@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package point;
+
+message Point{
+  int32 x =1;
+  int32 y =2;
+}
+message PointResponse {
+  string message=1;
+  int32 code =2;
+}
+service RouteGuide{
+  rpc GetLocation (Point) returns (PointResponse);
+};
